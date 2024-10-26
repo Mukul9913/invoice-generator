@@ -16,7 +16,7 @@ A simple invoice generator application that allows you to create professional in
 
 1. Clone the repository:
 
-git clone https://github.com/yourusername/invoice-generator.git
+git clone https://github.com/Mukul9913/invoice-generator.git
 cd invoice-generator
 
 
@@ -61,10 +61,6 @@ You can customize the invoice template by modifying the following files:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
 
-For support, email support@invoicegenerator.com or open an issue in the repository.
