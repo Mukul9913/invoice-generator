@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -38,22 +38,27 @@ const InvoiceForm = () => {
     }));
   };
 
-  const handleCalculateTotal = () => {
+  const handleCalculateTotal = useCallback(() => {
     const subTotal = items.reduce((sum, item) => (
       sum + parseFloat(item.price) * parseFloat(item.quantity)
     ), 0);
-
+  
     const taxAmount = (subTotal * formData.taxRate) / 100;
     const discountAmount = (subTotal * formData.discountRate) / 100;
     const total = subTotal + taxAmount - discountAmount;
-
+  
     setCalculations({
       subTotal: subTotal.toFixed(2),
       taxAmount: taxAmount.toFixed(2),
       discountAmount: discountAmount.toFixed(2),
       total: total.toFixed(2)
     });
-  };
+  }, [items, formData.taxRate, formData.discountRate]);
+  
+  useEffect(() => {
+    handleCalculateTotal();
+  }, [handleCalculateTotal]);
+  
 
   const onRowAdd = () => {
     const newItem = {
@@ -83,10 +88,6 @@ const InvoiceForm = () => {
     handleCalculateTotal();
     setIsOpen(true);
   };
-
-  useEffect(() => {
-    handleCalculateTotal();
-  }, [items, formData.taxRate, formData.discountRate]);
 
   return (
     <>
