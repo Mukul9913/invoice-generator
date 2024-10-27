@@ -71,8 +71,9 @@ const InvoiceForm = () => {
     setItems(prev => [...prev, newItem]);
   };
 
-  const onDelEvent = (itemId) => {
-    setItems(prev => prev.filter(item => item.id !== itemId));
+  const onDelEvent = (itemObject) => {
+
+    setItems(prev => prev.filter(item => item.id !== itemObject.id));
     handleCalculateTotal();
   };
 
