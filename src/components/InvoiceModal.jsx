@@ -36,7 +36,7 @@ pdf.save("invoice-001.pdf");
       <div id="invoice-modal">
         <div className="d-flex justify-content-between align-items-center bg-light p-4">
           <div className="w-100">
-            <h4 className="fw-bold my-2"></h4>
+            <h4 className="fw-bold my-2">{billFrom}</h4>
             <h6 className="fw-bold text-secondary mb-1">Invoice #:{invoiceNumber}</h6>
           </div>
           <div className="justify-content-end">
