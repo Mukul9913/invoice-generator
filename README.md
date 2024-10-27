@@ -60,6 +60,12 @@ You can customize the invoice template by modifying the following files:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+## Screenshots
+
+![Invoice Generator](invoice1.PNG)
+![Invoice Generator Modal](invoice2.PNG)
+
+The above screenshot shows the invoice generation interface with sample data.
 
 
 
